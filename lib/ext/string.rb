@@ -3,7 +3,7 @@ class String
         other.nil? ? self : self + other
     end
 
-    def get_factored(factor)
+    def scale(factor)
         len = (self.length * factor).abs.round
 
         return "" if len == 0

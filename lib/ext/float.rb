@@ -10,4 +10,12 @@ class Float
         # a * b = b * a
         other.is_a?(FieldExpression) ? other * self : old_mult(other)
     end
+
+    def combinate(other)
+        other.nil? ? self : self + other
+    end
+
+    def scale(factor)
+        factor * self
+    end
 end

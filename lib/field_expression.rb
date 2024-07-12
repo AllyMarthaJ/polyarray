@@ -101,14 +101,14 @@ class FieldExpression
         self
     end
 
-    def to_s
-        raise "Can't combine #{@value.class}" unless @value.respond_to?(:combinate)
+    def ~@
+        raise "Can't evaluate #{@value.class}" unless @value.respond_to?(:combinate)
 
-        # of type @value.class; e.g. get_factored: T |-> T.
+        # of type @value.class; e.g. scale: T |-> T.
         factored_value =
             (
-                if @value.respond_to?(:get_factored)
-                    @value.get_factored(@factor)
+                if @value.respond_to?(:scale)
+                    @value.scale(@factor)
                 else
                     @value.to_s
                 end
